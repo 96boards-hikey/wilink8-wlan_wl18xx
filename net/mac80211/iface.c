@@ -1628,7 +1628,7 @@ int ieee80211_if_add(struct ieee80211_local *local, const char *name,
 
 		ndev = alloc_netdev_mqs(sizeof(*sdata) +
 					local->hw.vif_data_size,
-					name, ieee80211_if_setup, txqs, 1);
+					name, NET_NAME_UNKNOWN, ieee80211_if_setup, txqs, 1);
 		if (!ndev)
 			return -ENOMEM;
 		dev_net_set(ndev, wiphy_net(local->hw.wiphy));
