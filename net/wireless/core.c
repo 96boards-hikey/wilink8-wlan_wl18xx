@@ -563,6 +563,7 @@ int wiphy_register(struct wiphy *wiphy)
 				rdev->wiphy.wowlan->pattern_max_len)))
 		return -EINVAL;
 
+#if 0
 #ifdef CONFIG_ANDROID
 	/* use wowlan by default */
 	if (rdev->wiphy.wowlan->flags & WIPHY_WOWLAN_ANY) {
@@ -575,6 +576,7 @@ int wiphy_register(struct wiphy *wiphy)
 		wowlan_cfg->any = true;
 		rdev->wiphy.wowlan_config = wowlan_cfg;
 	}
+#endif
 #endif
 #endif
 	/* check and set up bitrates */
